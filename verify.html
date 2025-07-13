@@ -46,6 +46,13 @@
       border: 1px solid #ccc;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       text-align: left;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlide 0.6s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+    .hidden {
+      display: none;
     }
     .card-title {
       font-weight: bold;
@@ -60,8 +67,12 @@
     .inactive {
       color: #999;
     }
-    .hidden {
-      display: none;
+
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -76,6 +87,8 @@
 
   <div id="result" class="card hidden"></div>
   <div id="allMembers" class="all-members hidden"></div>
+
+  <audio id="accessSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1d994fc8d7.mp3?filename=beep-7-16548.mp3"></audio>
 
   <script>
     const members = {
@@ -110,9 +123,12 @@
       const input = document.getElementById("nameInput").value.trim().toLowerCase();
       const resultDiv = document.getElementById("result");
       const allMembersDiv = document.getElementById("allMembers");
+      const audio = document.getElementById("accessSound");
 
       if (members[input]) {
         const member = members[input];
+        audio.play();
+
         resultDiv.innerHTML = `
           <div class="card-title">✅ Access Granted</div>
           <p><strong>Name:</strong> ${member.name}<br/>
