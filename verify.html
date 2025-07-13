@@ -144,6 +144,10 @@
         `).join("");
         allMembersDiv.classList.remove("hidden");
 
+        setTimeout(() => {
+          window.location.href = "cult.html";
+        }, 2500);
+
       } else {
         resultDiv.innerHTML = `<div class="card-title">❌ Access Denied</div><p>You are not recognized.</p>`;
         resultDiv.classList.remove("hidden");
