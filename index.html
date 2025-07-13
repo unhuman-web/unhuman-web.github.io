@@ -3,38 +3,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>THE UNHUMAN CULT</title>
   <style>
     body {
       margin: 0;
-      background: black;
-      color: #f00;
-      font-family: 'Courier New', Courier, monospace;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f3f3;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding: 40px 20px;
     }
     h1 {
       font-size: 3em;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+      font-weight: 700;
+      margin-bottom: 0.2em;
     }
     p {
       font-size: 1.2em;
-      max-width: 600px;
-      margin: 10px auto;
-      line-height: 1.5;
+      color: #444;
+      margin-bottom: 2em;
     }
-    .card {
-      border: 2px solid red;
-      padding: 20px;
-      margin: 30px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      background-color: #111;
+    .button-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      background: #111;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    a:hover {
+      background: #333;
     }
     .footer {
-      margin-top: 50px;
+      position: absolute;
+      bottom: 20px;
       font-size: 0.9em;
       color: #888;
     }
@@ -42,25 +56,16 @@
 </head>
 <body>
 
-  <h1>🩸 THE UNHUMAN CULT 🩸</h1>
+  <h1>THE UNHUMAN CULT</h1>
+  <p>You are not invited. You are chosen.</p>
 
-  <p>You are not invited.<br>You are <b>chosen</b>.</p>
-
-  <div class="card">
-    <p><b>This isn’t a dream.</b><br>
-    This is a system — built in silence, fueled by minds.</p>
-
-    <p>We don’t chase money.<br><b>We create it.</b></p>
-
-    <p><b>Mindset. Movement. Multiplication.</b></p>
-
-    <p>You came to make.<br>Now you move with us.</p>
-
-    <p>— PR1MAL</p>
+  <div class="button-group">
+    <a href="ranks.html">View Ranks</a>
+    <a href="vault.html">Enter Cult</a>
   </div>
 
   <div class="footer">
-    Cult Verified. © THE UNHUMAN CULT 2025
+    © 2025 THE UNHUMAN CULT — Powered by Vision, Not Noise
   </div>
 
 </body>
