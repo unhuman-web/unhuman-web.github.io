@@ -1,96 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CULT BASE | UNHUMAN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNHUMAN CULT — Cult Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
+      background-color: #111;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #f3f3f3;
       padding: 20px;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    .status {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
-    .primal-message {
-      background: #222;
+    .welcome-box {
+      background-color: #1c1c1c;
+      border-left: 6px solid red;
       padding: 20px;
-      border-left: 5px solid crimson;
       border-radius: 10px;
       margin-top: 20px;
     }
-    .notifications {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #222;
-      border-left: 4px solid limegreen;
-      padding: 15px 20px;
-      border-radius: 10px;
-      max-width: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    .notification-box {
+      background-color:#1c1c1c;
+      padding:10px;
+      border-radius:10px;
+      margin-bottom:20px;
+      color:white;
+      display:flex;
+      align-items:center;
     }
-    .notifications p {
-      margin: 0;
-      font-size: 0.95em;
+    .notification-box img {
+      width:24px;
+      margin-right:10px;
     }
     .chat-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: crimson;
+      background-color: #ff1c4d;
       color: white;
       padding: 12px 20px;
-      font-size: 1em;
       border: none;
       border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff1c4d;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
     }
-    .chat-button:hover {
-      background: #ff2b4e;
-    }
-    a {
-      color: #f3f3f3;
-      text-decoration: underline;
+    .chat-button img {
+      width: 20px;
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
 
-  <h1>🧠 CULT BASE ACTIVE</h1>
-  <div class="primal-message">
+  <div class="notification-box">
+    <img src="https://img.icons8.com/emoji/48/brain-emoji.png" />
+    <div>
+      <div style="font-weight:bold;">
+        ⚠️ New Initiate: Bhanu Teja — FORGER_2
+      </div>
+      <div>
+        🗓️ Next Mission Meet: <span style="color:#00ffae;">16 July — 10:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="status">ACTIVE</div>
+
+  <div class="welcome-box">
     <h2>🧠 WELCOME, UNHUMAN</h2>
-    <p>
-      You’ve made it through the gate.<br>
-      This is not a place — it’s a mindset.<br><br>
-
-      From this moment, you are part of something bigger, darker, and more powerful.<br>
-      Titles are earned. Silence is respected.  
-      Your next move defines your rise.<br><br>
-
-      🔥 Let the weak fear the unknown.  
-      The UNHUMAN shape it.
-    </p>
+    <p>You’ve made it through the gate.<br>
+    This is not a place — it’s a mindset.</p>
+    <p>From this moment, you are part of something bigger, darker, and more powerful.<br>
+    Titles are earned. Silence is respected. Your next move defines your rise.</p>
+    <p>🔥 Let the weak fear the unknown. The UNHUMAN shape it.</p>
   </div>
 
-  <div class="notifications">
-    <p>🔔 New Initiate: Bhanu Teja — FORGER_2</p>
-    <p>📅 Next Mission Meet: 16 July — 10:00 PM</p>
-  </div>
-
-  <button class="chat-button" onclick="openChat()">💬 Cult Chat</button>
-
-  <script>
-    function openChat() {
-      window.location.href = "chat.html";
-    }
-  </script>
+  <button class="chat-button" onclick="location.href='chat.html'">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" />
+    Cult Chat
+  </button>
 
 </body>
 </html>
