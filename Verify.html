@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ENTER CULT | Verification</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      color: #111;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px 15px;
+      font-size: 1em;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #333;
+    }
+    .card, .all-members {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .status {
+      font-weight: bold;
+    }
+    .active {
+      color: green;
+    }
+    .inactive {
+      color: #999;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ENTER CULT</h1>
+  <p>Type your name to verify access:</p>
+
+  <input type="text" id="nameInput" placeholder="Enter your name" />
+  <br/>
+  <button onclick="verify()">Verify</button>
+
+  <div id="result" class="card hidden"></div>
+  <div id="allMembers" class="all-members hidden"></div>
+
+  <script>
+    const members = {
+      "rahul reddy": {
+        name: "Rahul Reddy",
+        title: "FORGER_1",
+        status: "ACTIVE"
+      },
+      "bhanu teja": {
+        name: "Bhanu Teja",
+        title: "FORGER_2",
+        status: "ACTIVE"
+      },
+      "manideep": {
+        name: "Manideep",
+        title: "HACKER-S",
+        status: "ACTIVE"
+      },
+      "venkatesh": {
+        name: "Venkatesh",
+        title: "SUB PR1MAL-2",
+        status: "INACTIVE"
+      },
+      "gnaneshwar": {
+        name: "Gnaneshwar",
+        title: "SUB PR1MAL-1",
+        status: "INACTIVE"
+      }
+    };
+
+    function verify() {
+      const input = document.getElementById("nameInput").value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result");
+      const allMembersDiv = document.getElementById("allMembers");
+
+      if (members[input]) {
+        const member = members[input];
+        resultDiv.innerHTML = `
+          <div class="card-title">✅ Access Granted</div>
+          <p><strong>Name:</strong> ${member.name}<br/>
+             <strong>Title:</strong> ${member.title}<br/>
+             <strong>Status:</strong> <span class="status ${member.status === "ACTIVE" ? "active" : "inactive"}">${member.status}</span>
+          </p>
+        `;
+        resultDiv.classList.remove("hidden");
+
+        allMembersDiv.innerHTML = "<h3>All Cult Members</h3>" + Object.values(members).map(m => `
+          <p><strong>${m.name}</strong> — ${m.title} 
+          (<span class="status ${m.status === "ACTIVE" ? "active" : "inactive"}">${m.status}</span>)</p>
+        `).join("");
+        allMembersDiv.classList.remove("hidden");
+
+      } else {
+        resultDiv.innerHTML = `<div class="card-title">❌ Access Denied</div><p>You are not recognized.</p>`;
+        resultDiv.classList.remove("hidden");
+        allMembersDiv.classList.add("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>
