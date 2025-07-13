@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>UNHUMAN CULT | Chat Room</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: crimson;
+      text-align: center;
+    }
+    #messages {
+      border: 1px solid #333;
+      padding: 15px;
+      height: 400px;
+      overflow-y: scroll;
+      background: #1a1a1a;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    #messages p {
+      margin: 5px 0;
+      padding: 5px 10px;
+      background: #222;
+      border-left: 4px solid crimson;
+      border-radius: 4px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      width: 35%;
+    }
+    button {
+      background-color: crimson;
+      color: white;
+      cursor: pointer;
+      width: 20%;
+    }
+    .input-box {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💬 UNHUMAN CULT CHAT</h1>
+<div id="messages"></div>
+
+<div class="input-box">
+  <input type="text" id="nameInput" placeholder="Your Name" />
+  <input type="text" id="msgInput" placeholder="Your Message..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDXCq0tpPCd1CnLkWlzuFa0UmuRrQarJFo",
+    authDomain: "unhumancult.firebaseapp.com",
+    projectId: "unhumancult",
+    storageBucket: "unhumancult.firebasestorage.app",
+    messagingSenderId: "90522709729",
+    appId: "1:90522709729:web:987a6108f71585d55351a0"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  const messagesDiv = document.getElementById('messages');
+
+  function sendMessage() {
+    const name = document.getElementById('nameInput').value.trim();
+    const msg = document.getElementById('msgInput').value.trim();
+    if (!name || !msg) return;
+
+    db.collection("messages").add({
+      name: name,
+      message: msg,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    document.getElementById('msgInput').value = "";
+  }
+
+  db.collection("messages").orderBy("timestamp", "asc")
+    .onSnapshot(snapshot => {
+      messagesDiv.innerHTML = "";
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const p = document.createElement("p");
+        p.innerHTML = `<strong>${data.name}</strong>: ${data.message}`;
+        messagesDiv.appendChild(p);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      });
+    });
+</script>
+
+</body>
+</html>
