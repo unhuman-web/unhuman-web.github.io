@@ -1,94 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UNHUMAN CULT MEMBERS</title>
+  <meta charset="UTF-8">
+  <title>Active Members | THE UNHUMAN CULT</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #222;
-      padding: 40px 20px;
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
       text-align: center;
     }
+
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 30px;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #fff;
     }
-    .member {
-      background: #fff;
-      border: 1px solid #ccc;
+
+    .member-card {
+      border: 2px solid #fff;
       border-radius: 10px;
+      background-color: #111;
       padding: 20px;
       margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: left;
+      max-width: 400px;
+      color: lime;
     }
-    .member strong {
-      font-size: 1.2em;
-      color: #000;
+
+    .member-card h2 {
+      color: cyan;
+      margin-bottom: 10px;
     }
-    .details {
-      margin-top: 10px;
-      font-size: 0.95em;
-      color: #555;
+
+    .member-card p {
+      font-size: 1.1rem;
+      margin: 6px 0;
     }
-    .status {
-      font-weight: bold;
-    }
-    .active {
-      color: green;
-    }
-    .inactive {
-      color: #999;
-    }
-    a {
-      display: inline-block;
+
+    .footer {
       margin-top: 40px;
-      text-decoration: none;
-      background: #111;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-    }
-    a:hover {
-      background: #333;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
+  <h1>🕷️ ACTIVE MEMBERS — THE UNHUMAN CULT 🕷️</h1>
 
-  <h1>UNHUMAN CULT MEMBERS</h1>
-
-  <div class="member">
-    <strong>👤 Rahul Reddy — FORGER_1</strong>
-    <div class="details">Initiated: 13/07/2025 | Authorized by PR1MAL | Status: <span class="status active">ACTIVE</span></div>
+  <!-- Rahul -->
+  <div class="member-card">
+    <h2>RAHUL REDDY</h2>
+    <p><strong>Title:</strong> FORGER_1</p>
+    <p><strong>Initiation Date:</strong> 13/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
   </div>
 
-  <div class="member">
-    <strong>👤 Bhanu Teja — FORGER_2</strong>
-    <div class="details">Initiated: 13/07/2025 | Authorized by PR1MAL | Status: <span class="status active">ACTIVE</span></div>
+  <!-- Manideep -->
+  <div class="member-card">
+    <h2>MANIDEEP</h2>
+    <p><strong>Title:</strong> HACKER-S</p>
+    <p><strong>Initiation Date:</strong> 13/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
   </div>
 
-  <div class="member">
-    <strong>👤 Manideep — HACKER-S</strong>
-    <div class="details">Initiated: 13/07/2025 | Authorized by PR1MAL | Status: <span class="status active">ACTIVE</span></div>
+  <!-- Venkatesh -->
+  <div class="member-card">
+    <h2>VENKATESH</h2>
+    <p><strong>Title:</strong> SUB PR1MAL-2</p>
+    <p><strong>Initiation Date:</strong> 13/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
   </div>
 
-  <div class="member">
-    <strong>👤 Venkatesh — SUB PR1MAL-2</strong>
-    <div class="details">Initiated: 13/07/2025 | Authorized by PR1MAL | Status: <span class="status inactive">INACTIVE</span></div>
+  <!-- Bhanu Teja -->
+  <div class="member-card">
+    <h2>BHANU TEJA</h2>
+    <p><strong>Title:</strong> FORGER_2</p>
+    <p><strong>Initiation Date:</strong> 13/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
   </div>
 
-  <div class="member">
-    <strong>👤 Gnaneshwar — SUB PR1MAL-1</strong>
-    <div class="details">Initiated: 13/07/2025 | Authorized by PR1MAL | Status: <span class="status inactive">INACTIVE</span></div>
+  <!-- Gnaneshwar -->
+  <div class="member-card">
+    <h2>GNANESHWAR</h2>
+    <p><strong>Title:</strong> SUB PR1MAL-1</p>
+    <p><strong>Initiation Date:</strong> 13/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
   </div>
 
-  <a href="index.html">← Return to Home</a>
+  <!-- HARSHITH -->
+  <div class="member-card">
+    <h2>HARSHITH</h2>
+    <p><strong>Title:</strong> SPECIAL FORGET</p>
+    <p><strong>Initiation Date:</strong> 16/07/2025</p>
+    <p><strong>Status:</strong> ACTIVE</p>
+  </div>
 
+  <div class="footer">
+    Cult Database Refreshed · <span id="today"></span>
+  </div>
+
+  <script>
+    document.getElementById("today").innerText = new Date().toLocaleDateString();
+  </script>
 </body>
 </html>
